@@ -9,9 +9,9 @@ class Blog extends React.Component {
         const authorName="Taichi"
         return (
             <React.Fragment>
-                <Article    title="React"
-                            order={3}
-                            author={authorName} />
+                <Article    title="React"　order={1} />
+                <Article    title="JSXの使い方" order={2}/>
+                <Article    title="環境構築をしてみよう" order={3}/>
             </React.Fragment>
         )
     }
