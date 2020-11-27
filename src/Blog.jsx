@@ -1,54 +1,51 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Article from './Article';
 import {Foo, Bar} from './components/FooBar'
 import Hoge from './components/Hoge'
 
-class Blog extends React.Component {
-    constructor(props) {
-    super(props);
-    this.state = {
-        isPublished:false,
-        count: 0,
-    }
-    }
+const Blog = () => {
 
-    componentDidMount() {
-        document.getElementById('counter').addEventListener('click', this.countUp)
-    }
+    // super(props);
 
-    componentDidUpdate() {
-        console.log(this.state.count)
-        if (this.state.count >= 10){
-            this.setState({count: 0 })
-        }
-    }
+    //     isPublished:false,
+    //     count: 0,
+    
+    // }
 
-    conponentWillUnmount() {
-        document.getElementById('counter').removeEventListener('click', this.countUp)
-    }
+    // // componentDidMount() {
+    // //     document.getElementById('counter').addEventListener('click', this.countUp)
+    // // }
 
-    togglePublished = () => {
-        this.setState({
-            isPublished:!this.state.isPublished
-        })
-    };
+    // // componentDidUpdate() {
+    // //     console.log(this.state.count)
+    // //     if (this.state.count >= 10){
+    // //         this.setState({count: 0 })
+    // //     }
+    // // }
 
-    countUp = () => {
-        this.setState({count:this.state.count+1})
-    }
+    // // conponentWillUnmount() {
+    // //     document.getElementById('counter').removeEventListener('click', this.countUp)
+    // // }
 
-    render() {
+    // togglePublished = () => {
+    //     this.setState({
+    //         isPublished:!this.state.isPublished
+    //     })
+    // };
+
+    // // countUp = () => {
+    // //     this.setState({count:this.state.count+1})
+    // // }
+
+
         return (
             <React.Fragment>
-                <Article    title="Reactの使い方" 
-                            isPublished={this.state.isPublished} 
-                            toggle={() =>{this.togglePublished()}}
-                            count={this.state.count} />
+                    <Article    title="Reactの使い方" />
                 <Foo />
                 <Bar />
             </React.Fragment>
         )
-    }
+    
 }
 
 export default Blog;
